@@ -1,0 +1,74 @@
+{
+  "name": "@couryo/email-templates",
+  "version": "0.1.0",
+  "description": "Brazilian transactional email templates for React Email: Pix, boleto, password reset, login code... Works with any email provider.",
+  "license": "MIT",
+  "author": "Wunka",
+  "homepage": "https://couryo.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wunka-Tech/couryo-email-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Wunka-Tech/couryo-email-templates/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README.pt-BR.md",
+    "LICENSE",
+    "previews"
+  ],
+  "keywords": [
+    "react-email",
+    "email templates",
+    "email",
+    "pix",
+    "boleto",
+    "transactional email",
+    "brasil",
+    "brazil",
+    "react"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\" && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src test scripts",
+    "test": "vitest run",
+    "previews": "tsc -p tsconfig.build.json && node scripts/previews.mjs"
+  },
+  "peerDependencies": {
+    "@react-email/components": "^1.0.0",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@react-email/render": "^2.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@react-email/components": "^1.0.0",
+    "@types/react": "^18.3.23",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^9.32.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.38.0",
+    "vitest": "^3.2.4"
+  }
+}
